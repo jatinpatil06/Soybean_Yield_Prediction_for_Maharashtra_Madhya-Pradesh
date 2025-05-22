@@ -1,104 +1,82 @@
-# 🌾 Soybean Yield Prediction using Machine Learning in Maharashtra & Madhya Pradesh
+readme_text = """
+# ✅ Soybean Yield Prediction using Machine Learning
 
-This repository contains the implementation of a robust machine learning pipeline for predicting soybean yield across two major agricultural states in India: **Maharashtra** and **Madhya Pradesh**. The project integrates **geospatial, soil, and meteorological data**, applying state-of-the-art regression models and explainability tools to support **precision agriculture** and **policy-level decision making**.
+## 📌 Overview
 
----
+This project presents an end-to-end machine learning pipeline for **soybean yield prediction** using district-level agro-climatic, soil, and weather parameters from **Maharashtra** and **Madhya Pradesh**.
 
-## 📚 Abstract
+Key highlights:
+- Regression models compared and evaluated
+- Data imbalance addressed with SMOGN oversampling
+- Model interpretation using **LIME** and **SHAP**
+- Visualizations for model predictions and explanations
 
-Agricultural uncertainty remains a persistent issue in India, especially in soybean-producing states where unstable crop yields have led to **financial stress** and **farmer suicides**. This project proposes a **data-driven framework** to forecast soybean yields using:
-- Meteorological data
-- Soil nutrient features
-- Machine learning models
-- Explainability techniques
+## 📊 Dataset Description
 
-To combat **data sparsity** and **imbalanced yield distributions**, we use **SMOGN (Synthetic Minority Over-sampling Technique for Regression with Gaussian Noise)**. The pipeline evaluates multiple regressors, and the **Extra Trees Regressor** emerged as the best performer with:
+The dataset includes:
+- 🌦 Meteorological features (e.g., temperature, humidity, wind)
+- 🌱 Soil features (e.g., nutrient content, soil type)
+- 📍 Agricultural context (e.g., area, region)
 
-> **R² = 0.81 | MAE = 150.4**
+> 📍 Covers 88 districts over multiple seasons.
 
-Further, explainable AI techniques like **LIME** and **SHAP** were integrated to reveal that:
-- **Nitrogen & Phosphorus levels**
-- **Temperature range**
-- **Wind speed**
+## ⚙️ Pipeline Summary
 
-are the most influential factors in determining yield.
+1. **Data Preprocessing**
+   - Handling missing values
+   - Label encoding for categorical features
+   - Standard scaling
+   - Synthetic oversampling with SMOGN for low-yield instances
 
----
+2. **Model Training & Evaluation**
+   - Compared models: Extra Trees, Random Forest, XGBoost, KNN, SVR, Ridge, Lasso
+   - Evaluation metrics: MAE, MSE, RMSE, R²
 
-## 🔍 Goals & Impact
+3. **Interpretability**
+   - Local interpretability via **LIME**
+   - Global + local insights via **SHAP**
 
-- 🎯 Predict soybean yield (kg/hectare) accurately
-- 💡 Understand key agronomic features influencing yield
-- 🧠 Provide transparency using explainable AI
-- 🛠️ Develop a foundation for real-time decision-support systems
-- 📉 Mitigate farmer distress through data-driven planning
+## 📈 Model Results
 
----
+| Model           | MAE     | MSE       | RMSE    | R²    |
+|----------------|---------|-----------|---------|-------|
+| **Extra Trees** | 150.40  | 55198.14  | 234.71  | 0.81  |
+| Random Forest   | 173.07  | 77130.25  | 255.31  | 0.77  |
+| XGBoost         | 193.85  | 75411.53  | 274.61  | 0.77  |
+| K Neighbors     | 208.27  | 99872.28  | 314.25  | 0.65  |
+| Decision Tree   | 209.22  |109158.18  | 330.21  | 0.61  |
+| Ridge           | 338.64  |188218.98  | 433.60  | 0.34  |
+| Lasso           | 339.61  |188659.51  | 434.35  | 0.34  |
+| Support Vector  | 354.53  |210409.42  | 458.71  | 0.26  |
 
-## 🗂️ Dataset Overview
+📌 **Best Model**: `Extra Trees Regressor` with **R² = 0.81**
 
-The data combines:
-- 🌦️ **Meteorological parameters**: rainfall, temperature range, wind speed
-- 🌱 **Soil data**: nitrogen, phosphorus, potassium levels
-- 🗺️ **Geographical indicators**: latitude, longitude, district
-- 🧪 **Target**: Soybean yield (kg/hectare)
+## 📉 Model Visualizations
 
-> Note: Due to size constraints, the dataset is not included. Contact the author or use custom data matching the same schema.
+- ✅ **Fig 12**: `pred_vs_actual_extratrees.png`
+- ✅ **Fig 13**: `pred_vs_actual_rf.png`
+- ✅ **Fig 14**: `pred_vs_actual_knn.png`
+- ✅ **Fig 15**: `pred_vs_actual_svr.png`
 
----
+Use matplotlib/seaborn scatter plots with actual vs. predicted values and diagonal reference line.
 
-## 🔧 Methods & Tools
+## 🧠 Model Interpretability
 
-| Category             | Tools / Techniques Used                         |
-|----------------------|--------------------------------------------------|
-| Programming          | Python, Jupyter Notebook                        |
-| ML Models            | Extra Trees, XGBoost, Random Forest, Ridge, SVR |
-| Resampling           | SMOGN (Synthetic Oversampling for Regression)   |
-| Evaluation           | R² Score, MAE, MSE, Cross-validation            |
-| Explainability       | SHAP, LIME                                      |
-| Visualization        | Matplotlib, Seaborn                             |
+- **Fig 16 – LIME Local Explanation**
+- **Fig 17 – SHAP Global Summary**
+- **Fig 18 – SHAP Waterfall Plot**
 
----
+Insights:
+- 🌿 Nutrients like phosphorus and nitrogen boost yield
+- 🌬️ High wind, radiation, and temperature extremes reduce yield
+- 🧠 SHAP and LIME enhance interpretability and decision confidence
 
-## 🧪 Model Performance
-
-| Model                | R² Score | MAE     |
-|---------------------|----------|---------|
-| Extra Trees          | **0.81** | **150.4** |
-| XGBoost              | 0.78     | 162.1   |
-| Random Forest        | 0.76     | 165.8   |
-| Ridge Regression     | 0.63     | 210.0   |
-
-✅ Extra Trees showed the best generalization across all yield ranges.
-
----
-
-## 📈 Recommended Figures for README
-
-You can include the following figures (add them in `assets/` or via external links):
-
-1. **Model Comparison Bar Chart** – R² score of all models  
-2. **Scatter Plot** – Predicted vs Actual yield (for Extra Trees)  
-3. **SHAP Summary Plot** – Feature importance visualization  
-4. **LIME Explanation for a Sample** – Local interpretability  
-5. **Geographical Heatmap** – District-wise yield distribution (if available)
-
----
-
-## 🧠 Explainable AI
-
-To improve model transparency and build user trust:
-- **SHAP (SHapley Additive exPlanations)**: Quantified global feature contributions.
-- **LIME (Local Interpretable Model-agnostic Explanations)**: Explained individual predictions.
-
-These tools confirmed **soil nutrients and climatic factors** as key yield predictors.
-
----
-
-## 🛠️ Installation
+## 🧪 Reproducibility
 
 ```bash
-git clone https://github.com/yourusername/soybean-yield-prediction.git
-cd soybean-yield-prediction
+git clone https://github.com/jatinpatil06/soybean-yield-ml.git
+cd soybean-yield-ml
+conda create -n soyenv python=3.10
+conda activate soyenv
 pip install -r requirements.txt
-jupyter notebook soybean-yield-prediction.ipynb
+python train_models.py
