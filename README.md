@@ -1,8 +1,7 @@
-# 🌱 Soybean Yield Prediction with Interpretability (SHAP & LIME)
+# 🌾 Soybean Yield Prediction with Model Interpretability (SHAP & LIME)
 
 This project presents an interpretable machine learning pipeline for **soybean crop yield prediction** in the Indian states of **Maharashtra** and **Madhya Pradesh**. It uses ensemble regression models, synthetic oversampling (SMOGN), and interpretable AI techniques like **SHAP** and **LIME** to make predictions both **accurate** and **explainable**.
 
----
 
 ## 📌 Project Highlights
 
@@ -12,7 +11,6 @@ This project presents an interpretable machine learning pipeline for **soybean c
 - 🌾 Key features: **Soil nutrients (N, P)**, **Temperature range**, **Wind speed**
 - 💡 Interpretable predictions with **LIME** (local) and **SHAP** (global & local)
 
----
 
 ## 📊 Model Performance
 
@@ -28,23 +26,15 @@ This project presents an interpretable machine learning pipeline for **soybean c
 
 ---
 
-## 🖼️ Visualization
+## 🖼️ Results Visualization
 
 ### 📈 Actual vs Predicted Yield (Extra Trees Regressor)
-![Actual vs Predicted Yield](plots/Predicted vs Actual Crop Yield for Extra Trees Regressor.svg)
+![Actual vs Predicted Yield](plots/extra_trees.svg)
 
 This scatter plot demonstrates how well the Extra Trees Regressor aligns with real-world data, especially in the medium-to-high yield range.
 
----
 
 ## 🔍 Model Interpretability
-
-### 🧩 LIME Local Explanation
-![LIME Explanation](plots/lime_plot.svg)
-
-LIME provides **instance-specific insight**. In this example, absence of red soil and presence of phosphorus & nitrogen had the strongest positive impact.
-
----
 
 ### 🌍 SHAP Global Summary
 ![SHAP Summary Plot](plots/shap_summary_plot.svg)
@@ -55,12 +45,17 @@ SHAP highlights the **most influential features** across all predictions:
 - 🧪 Soil Nutrients (N, P)
 - 💧 Root Zone Soil Wetness (GWET_ROOT)
 
----
+
+### 🧩 LIME Local Explanation
+![LIME Explanation](plots/lime_plot.svg)
+
+LIME provides **instance-specific insight**. In this example, presence of red soil increases yield whereas presence of phosphorus & nitrogen decreases it.
+
 
 ### 🔬 SHAP Local Explanation (Waterfall Plot)
 ![SHAP Waterfall Plot](plots/waterfall_plot.svg)
 
-SHAP’s local explanation for a single prediction, breaking down how each feature pushed the prediction higher or lower relative to the base value.
+SHAP’s local explanation for a single prediction, breaking down how each feature pushed the prediction higher or lower relative to the base value. The temperature difference increases yield whereas root zone wetness decreases it for this particular example.
 
 ---
 
@@ -72,7 +67,6 @@ SHAP’s local explanation for a single prediction, breaking down how each featu
   - 🌱 Soil: nitrogen, phosphorus, soil type
   - 🧭 Geospatial: cultivated area, soil wetness
 
----
 
 ## 🛠️ Methodology
 
@@ -99,7 +93,6 @@ SHAP’s local explanation for a single prediction, breaking down how each featu
 - SHAP: Lundberg, S.M., & Lee, S.-I. (2017)
 - LIME: Ribeiro, M.T., Singh, S., & Guestrin, C. (2016)
 
----
 
 ## 🧠 Future Work
 
@@ -108,19 +101,6 @@ SHAP’s local explanation for a single prediction, breaking down how each featu
 - 🧬 Try deep learning architectures (CNNs, LSTMs)
 - 🚀 Real-time deployment with interactive dashboards
 
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📩 Contact
-
-For questions or collaborations, please reach out via [GitHub Issues](https://github.com/yourusername/yourrepo/issues) or connect on [LinkedIn](https://www.linkedin.com/).
-
----
 
 ## 📜 License
 
