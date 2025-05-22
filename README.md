@@ -31,7 +31,7 @@ This project presents an interpretable machine learning pipeline for **soybean c
 ## 🖼️ Visualization
 
 ### 📈 Actual vs Predicted Yield (Extra Trees Regressor)
-![Actual vs Predicted Yield](figures/actual_vs_predicted.png)
+![Actual vs Predicted Yield](plots/Predicted vs Actual Crop Yield for Extra Trees Regressor.svg)
 
 This scatter plot demonstrates how well the Extra Trees Regressor aligns with real-world data, especially in the medium-to-high yield range.
 
@@ -47,7 +47,7 @@ LIME provides **instance-specific insight**. In this example, absence of red soi
 ---
 
 ### 🌍 SHAP Global Summary
-![SHAP Summary Plot](figures/shap_summary.png)
+![SHAP Summary Plot](plots/shap_summary_plot.svg)
 
 SHAP highlights the **most influential features** across all predictions:
 - 🌡️ Temperature Range (T2M_RANGE)
@@ -58,7 +58,7 @@ SHAP highlights the **most influential features** across all predictions:
 ---
 
 ### 🔬 SHAP Local Explanation (Waterfall Plot)
-![SHAP Waterfall Plot](figures/shap_waterfall.png)
+![SHAP Waterfall Plot](plots/waterfall_plot.svg)
 
 SHAP’s local explanation for a single prediction, breaking down how each feature pushed the prediction higher or lower relative to the base value.
 
