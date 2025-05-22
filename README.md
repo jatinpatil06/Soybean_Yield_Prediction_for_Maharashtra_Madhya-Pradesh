@@ -40,7 +40,7 @@ This scatter plot demonstrates how well the Extra Trees Regressor aligns with re
 ## 🔍 Model Interpretability
 
 ### 🧩 LIME Local Explanation
-![LIME Explanation](figures/lime_explanation.png)
+![LIME Explanation](plots/lime_plot.svg)
 
 LIME provides **instance-specific insight**. In this example, absence of red soil and presence of phosphorus & nitrogen had the strongest positive impact.
 
