@@ -24,7 +24,6 @@ This project presents an interpretable machine learning pipeline for **soybean c
 | Ridge Regression | 338.6  | 433.6  | 0.34 |
 | Lasso Regression | 339.6  | 434.4  | 0.34 |
 
----
 
 ## 🖼️ Results Visualization
 
@@ -57,7 +56,6 @@ LIME provides **instance-specific insight**. In this example, presence of red so
 
 SHAP’s local explanation for a single prediction, breaking down how each feature pushed the prediction higher or lower relative to the base value. The temperature difference increases yield whereas root zone wetness decreases it for this particular example.
 
----
 
 ## 🧪 Dataset & Features
 
@@ -76,7 +74,6 @@ SHAP’s local explanation for a single prediction, breaking down how each featu
 4. **Evaluation**: MAE, MSE, RMSE, R²
 5. **Interpretability**: LIME for local, SHAP for global + local explanation
 
----
 
 ## 🎯 Applications
 
@@ -85,7 +82,6 @@ SHAP’s local explanation for a single prediction, breaking down how each featu
 - 🌾 Soil and fertilizer management
 - 🧭 Policy-level decision support
 
----
 
 ## 📚 References
 
