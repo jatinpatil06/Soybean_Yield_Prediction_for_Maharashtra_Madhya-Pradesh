@@ -1,82 +1,127 @@
-readme_text = """
-# ✅ Soybean Yield Prediction using Machine Learning
+# 🌱 Soybean Yield Prediction with Interpretability (SHAP & LIME)
 
-## 📌 Overview
+This project presents an interpretable machine learning pipeline for **soybean crop yield prediction** in the Indian states of **Maharashtra** and **Madhya Pradesh**. It uses ensemble regression models, synthetic oversampling (SMOGN), and interpretable AI techniques like **SHAP** and **LIME** to make predictions both **accurate** and **explainable**.
 
-This project presents an end-to-end machine learning pipeline for **soybean yield prediction** using district-level agro-climatic, soil, and weather parameters from **Maharashtra** and **Madhya Pradesh**.
+---
 
-Key highlights:
-- Regression models compared and evaluated
-- Data imbalance addressed with SMOGN oversampling
-- Model interpretation using **LIME** and **SHAP**
-- Visualizations for model predictions and explanations
+## 📌 Project Highlights
 
-## 📊 Dataset Description
+- 🔍 Predictive modeling using Extra Trees, Random Forest, XGBoost, SVR, Lasso, Ridge, KNN
+- ⚖️ Synthetic oversampling with **SMOGN** to address imbalanced yield distribution
+- 🧠 Best model: **Extra Trees Regressor** with **R² = 0.81**
+- 🌾 Key features: **Soil nutrients (N, P)**, **Temperature range**, **Wind speed**
+- 💡 Interpretable predictions with **LIME** (local) and **SHAP** (global & local)
 
-The dataset includes:
-- 🌦 Meteorological features (e.g., temperature, humidity, wind)
-- 🌱 Soil features (e.g., nutrient content, soil type)
-- 📍 Agricultural context (e.g., area, region)
+---
 
-> 📍 Covers 88 districts over multiple seasons.
+## 📊 Model Performance
 
-## ⚙️ Pipeline Summary
+| Model            | MAE    | RMSE   | R²   |
+|------------------|--------|--------|------|
+| Extra Trees      | 150.4  | 234.7  | 0.81 |
+| Random Forest    | 173.1  | 255.3  | 0.77 |
+| XGBoost          | 193.9  | 274.6  | 0.77 |
+| K Neighbors      | 208.3  | 314.3  | 0.65 |
+| SVR              | 354.5  | 458.7  | 0.26 |
+| Ridge Regression | 338.6  | 433.6  | 0.34 |
+| Lasso Regression | 339.6  | 434.4  | 0.34 |
 
-1. **Data Preprocessing**
-   - Handling missing values
-   - Label encoding for categorical features
-   - Standard scaling
-   - Synthetic oversampling with SMOGN for low-yield instances
+---
 
-2. **Model Training & Evaluation**
-   - Compared models: Extra Trees, Random Forest, XGBoost, KNN, SVR, Ridge, Lasso
-   - Evaluation metrics: MAE, MSE, RMSE, R²
+## 🖼️ Visualization
 
-3. **Interpretability**
-   - Local interpretability via **LIME**
-   - Global + local insights via **SHAP**
+### 📈 Actual vs Predicted Yield (Extra Trees Regressor)
+![Actual vs Predicted Yield](figures/actual_vs_predicted.png)
 
-## 📈 Model Results
+This scatter plot demonstrates how well the Extra Trees Regressor aligns with real-world data, especially in the medium-to-high yield range.
 
-| Model           | MAE     | MSE       | RMSE    | R²    |
-|----------------|---------|-----------|---------|-------|
-| **Extra Trees** | 150.40  | 55198.14  | 234.71  | 0.81  |
-| Random Forest   | 173.07  | 77130.25  | 255.31  | 0.77  |
-| XGBoost         | 193.85  | 75411.53  | 274.61  | 0.77  |
-| K Neighbors     | 208.27  | 99872.28  | 314.25  | 0.65  |
-| Decision Tree   | 209.22  |109158.18  | 330.21  | 0.61  |
-| Ridge           | 338.64  |188218.98  | 433.60  | 0.34  |
-| Lasso           | 339.61  |188659.51  | 434.35  | 0.34  |
-| Support Vector  | 354.53  |210409.42  | 458.71  | 0.26  |
+---
 
-📌 **Best Model**: `Extra Trees Regressor` with **R² = 0.81**
+## 🔍 Model Interpretability
 
-## 📉 Model Visualizations
+### 🧩 LIME Local Explanation
+![LIME Explanation](figures/lime_explanation.png)
 
-- ✅ **Fig 12**: `pred_vs_actual_extratrees.png`
-- ✅ **Fig 13**: `pred_vs_actual_rf.png`
-- ✅ **Fig 14**: `pred_vs_actual_knn.png`
-- ✅ **Fig 15**: `pred_vs_actual_svr.png`
+LIME provides **instance-specific insight**. In this example, absence of red soil and presence of phosphorus & nitrogen had the strongest positive impact.
 
-Use matplotlib/seaborn scatter plots with actual vs. predicted values and diagonal reference line.
+---
 
-## 🧠 Model Interpretability
+### 🌍 SHAP Global Summary
+![SHAP Summary Plot](figures/shap_summary.png)
 
-- **Fig 16 – LIME Local Explanation**
-- **Fig 17 – SHAP Global Summary**
-- **Fig 18 – SHAP Waterfall Plot**
+SHAP highlights the **most influential features** across all predictions:
+- 🌡️ Temperature Range (T2M_RANGE)
+- 💨 Wind Speed (WS2M)
+- 🧪 Soil Nutrients (N, P)
+- 💧 Root Zone Soil Wetness (GWET_ROOT)
 
-Insights:
-- 🌿 Nutrients like phosphorus and nitrogen boost yield
-- 🌬️ High wind, radiation, and temperature extremes reduce yield
-- 🧠 SHAP and LIME enhance interpretability and decision confidence
+---
 
-## 🧪 Reproducibility
+### 🔬 SHAP Local Explanation (Waterfall Plot)
+![SHAP Waterfall Plot](figures/shap_waterfall.png)
 
-```bash
-git clone https://github.com/jatinpatil06/soybean-yield-ml.git
-cd soybean-yield-ml
-conda create -n soyenv python=3.10
-conda activate soyenv
-pip install -r requirements.txt
-python train_models.py
+SHAP’s local explanation for a single prediction, breaking down how each feature pushed the prediction higher or lower relative to the base value.
+
+---
+
+## 🧪 Dataset & Features
+
+- **Region**: 88 districts from Maharashtra and Madhya Pradesh
+- **Features**: 
+  - 📊 Climatic: temperature, wind speed, solar radiation, humidity
+  - 🌱 Soil: nitrogen, phosphorus, soil type
+  - 🧭 Geospatial: cultivated area, soil wetness
+
+---
+
+## 🛠️ Methodology
+
+1. **Data Preprocessing**: Cleaning, encoding, scaling
+2. **SMOGN**: Synthetic sampling for regression
+3. **Model Training**: Ensemble + Linear models with cross-validation
+4. **Evaluation**: MAE, MSE, RMSE, R²
+5. **Interpretability**: LIME for local, SHAP for global + local explanation
+
+---
+
+## 🎯 Applications
+
+- 📍 Precision Agriculture
+- 📉 Crop risk mitigation
+- 🌾 Soil and fertilizer management
+- 🧭 Policy-level decision support
+
+---
+
+## 📚 References
+
+- SMOGN: Torgo, L., et al. (2017)
+- SHAP: Lundberg, S.M., & Lee, S.-I. (2017)
+- LIME: Ribeiro, M.T., Singh, S., & Guestrin, C. (2016)
+
+---
+
+## 🧠 Future Work
+
+- 🌐 Add remote sensing and satellite features
+- 🛰️ Spatio-temporal model integration
+- 🧬 Try deep learning architectures (CNNs, LSTMs)
+- 🚀 Real-time deployment with interactive dashboards
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📩 Contact
+
+For questions or collaborations, please reach out via [GitHub Issues](https://github.com/yourusername/yourrepo/issues) or connect on [LinkedIn](https://www.linkedin.com/).
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
