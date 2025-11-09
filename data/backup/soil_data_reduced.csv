@@ -1,0 +1,90 @@
+DISTRICT,Nitrogen(N),Phosphorous(P),Potassium(K),Soil Type,Soil Depth
+Sheopur,Medium ,Medium,High,Alluvial,300
+Morena,High,Medium,High,Alluvial,300
+Bhind,High,Low,High,Alluvial,300
+Gwalior,Medium ,Low,High,Black,100-300
+Datia,Medium,Low,Medium,Black,100-300
+Shivpuri,High,Low,High,Black,100-300
+Guna,Medium ,High,High,Black,100-300
+Ashoknagar,High,Low,High,Black,100-300
+Neemuch,Medium ,Medium,High,Mixed Red & Black,50-100
+Mandsaur,Medium ,Medium,High,Mixed Red & Black,50-100
+Ratlam,Medium ,Medium,High,Mixed Red & Black,50-100
+Ujjain,Medium ,Low,High,Black,100-300
+Agar Malwa,Medium ,Medium,High,Black,100-300
+Rajgarh,Medium ,High,High,Black,100-300
+Vidisha,Medium ,Medium,High,Black,100-300
+Sagar,High,Medium,High,Black,100-300
+Damoh,Medium ,Low,High,Black,100-300
+Niwan,Medium ,Medium,Medium,Black,100-300
+Tikamgarh,Medium ,Medium,Medium,Black,100-300
+Chhatarpur,Medium ,Low,High,Mixed Red & Black,50-100
+Panna,Medium ,Low,Medium,Mixed Red & Black,50-100
+Satna,Medium ,Medium,High,Black,100-300
+Rewa,Medium ,Medium,High,Red,25-50
+Sidhi,Medium ,Medium,Medium,Red,25-50
+Singrauli,Medium ,Medium,Medium,Red,25-50
+Katni,Medium ,Low,High,Black,100-300
+Umaria,Medium ,Low,Medium,Black,100-300
+Shahdol,Medium ,Medium,Medium,Red,25-50
+Anuppur,Medium ,Medium,Medium,Red,25-50
+Dindori,Medium ,High,Medium,Red,25-50
+Jabalpur,Medium ,Low,High,Black,100-300
+Mandla,Medium ,High,Medium,Black,100-300
+Balaghat,Medium ,Medium,Medium,Black,100-300
+Seoni,Medium ,Medium,Medium,Black,100-300
+Narsinghpur,Medium ,Medium,High,Mixed Red & Black,50-100
+Chhindwara,Medium ,Medium,High,Black,100-300
+Raisen,Medium ,Medium,High,Black,100-300
+Hoshangabad,Medium ,High,High,Mixed Red & Black,50-100
+Betul,Medium ,Low,High,Black,100-300
+Bhopal,Medium ,Medium,High,Black,100-300
+Sehore,Medium ,High,High,Black,100-300
+Harda,Medium ,Medium,High,Black,100-300
+Khandwa,Medium ,Medium,High,Black,100-300
+Burhanpur,Medium ,Medium,High,Black,100-300
+Dewas,Medium ,Low,High,Black,100-300
+Shajapur,Medium ,Medium,High,Black,100-300
+Indore,Medium ,Medium,Medium,Black,100-300
+Khargone,Medium ,Medium,High,Black,100-300
+Barwani,Medium ,Medium,High,Black,100-300
+Dhar,Medium ,High,High,Black,100-300
+Alirajpur,Medium ,Low,High,Black,100-300
+Jhabua,Medium ,Low,High,Black,100-300
+Gondia,Low,Low,High,Black,100-300
+Gadchiroli,Low,Low,High,Mixed Red & Black,50-100
+Chandrapur,Low,Low,High,Mixed Red & Black,50-100
+Bhandara,Low,Low,High,Black,100-300
+Nagpur,Low,Low,High,Black,100-300
+Wardha,Low,Low,High,Black,100-300
+Amaravati,Low,Low,Medium,Black,100-300
+Yavatmal,Low,Low,High,Mixed Red & Black,50-100
+Akola,Low,Low,Medium,Black,100-300
+Washim,Low,Low,High,Black,100-300
+Buldhana,Low,Low,High,Black,100-300
+Nanded,Low,Low,High,Black,100-300
+Hingoli,Low,Low,High,Black,100-300
+Parbhani,Low,Low,High,Black,100-300
+Jalna,Low,Low,High,Black,100-300
+Aurangabad,Low,Low,High,Black,100-300
+Beed,Low,Medium,High,Black,100-300
+Latur,Low,Low,High,Black,100-300
+Usmanabad,Low,Low,High,Black,100-300
+Nandurbar,Medium,Low,High,Black,100-300
+Dhule,Medium,Low,High,Black,100-300
+Jalgaon,Low,Low,High,Black,100-300
+Nashik,Low,Low,High,Black,100-300
+Ahmadnagar,Low,Low,High,Black,100-300
+Pune,Low,Low,High,Black,100-300
+Satara,Low,Low,Low,Black,100-300
+Solapur,Low,Low,High,Black,100-300
+Sangli,Low,Low,High,Black,100-300
+Kolhapur,Medium ,Low,Medium,Black,100-300
+Palghar,Medium ,Medium,High,Red,25-50
+Thane,Medium ,Medium,High,Red,25-50
+Mumbai Suburban,,Low,High,Red,25-50
+Mumbai City,,Low,High,Red,25-50
+Raigad,Low,Low,Low,Red,25-50
+Ratnagiri,Low,Low,Low,Laterite,25
+Sindhudurg,Medium,Low,Low,Alluvial,300
+ ,,,,,
